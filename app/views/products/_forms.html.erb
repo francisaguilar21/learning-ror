@@ -1,0 +1,12 @@
+<div style="margin-top:50px; margin-bottom:50px">
+    <%= form_with model: product do |form| %>
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div style="padding-top:20px">
+        <%= form.submit %>
+    </div>
+    <% end %>
+</div>
