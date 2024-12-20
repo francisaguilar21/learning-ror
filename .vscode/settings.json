@@ -1,0 +1,10 @@
+{
+    // If not specified searches for 'rubocop' executable available on PATH (default and recommended)
+    "ruby.rubocop.executePath": "/home/f21/projects/store/bin/rubocop",
+  
+    // If not specified, it assumes a null value by default.
+    "ruby.rubocop.configFilePath": "/home/f21/projects/store/.rubocop.yml",
+  
+    // default true
+    "ruby.rubocop.onSave": true
+}
