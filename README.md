@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Explored relearning Ruby on Rails (RoR) again since 2014.
+I'm using Ruby 3.3.6 and Rails 8.0.1 in this repo.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I went through:
+- the basics covered in the [Rails docs](https://guides.rubyonrails.org/getting_started.html) such as
+  - active record
+  - MVC handling and routes
+  - authentication
+  - caching
+- Basic nil handling and basic begin/rescue/ensure (try catch)
+- the process of creating service classes
+- how to integrate with 3rd party APIs
