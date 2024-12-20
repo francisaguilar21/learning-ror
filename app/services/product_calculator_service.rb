@@ -5,6 +5,14 @@ class ProductCalculatorService < ApplicationService
   end
 
   def compute_discount
-    @amount * @discount_percentage / 100.0
+    @discounted_price = 0.00
+
+    begin
+      @discounted_price = @amount * @discount_percentage / 100.00
+    rescue
+      puts "Amount or discount % is nil"
+    ensure
+      @discounted_price
+    end
   end
 end

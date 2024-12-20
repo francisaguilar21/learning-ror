@@ -2,13 +2,18 @@ class ProductsController < ApplicationController
   allow_unauthenticated_access only: %i[ index show ]
   before_action :set_product, only: %i[ show edit update destroy ]
 
+  @@default_price = 10.00
+
   def index
     @products = Product.all
   end
 
   def show
-    @discounted_price = @product.price - ProductCalculatorService.new(@product.price, @product.discount_percentage).compute_discount
-    puts @discounted_price
+    @product.price = @product.price || @@default_price
+    @product.discount_percentage = @product.discount_percentage || 0.00
+
+    puts "Price: #{@product.price}"
+    @discounted_price = @product.price - ProductCalculatorService.new(@product.price, @product.discount_percentage).compute_discount 
   end
 
   def new
