@@ -7,6 +7,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @discounted_price = @product.price - ProductCalculatorService.new(@product.price, @product.discount_percentage).compute_discount
+    puts @discounted_price
   end
 
   def new
@@ -43,7 +45,7 @@ class ProductsController < ApplicationController
       @product = Product.find(params[:id])
     end
     def product_params
-      params.expect(product: [ :name ])
+      params.expect(product: [ :name, :description ])
     end
 
 end
