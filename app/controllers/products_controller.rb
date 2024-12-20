@@ -13,7 +13,7 @@ class ProductsController < ApplicationController
     @product.discount_percentage = @product.discount_percentage || 0.00
 
     puts "Price: #{@product.price}"
-    @discounted_price = @product.price - ProductCalculatorService.new(@product.price, @product.discount_percentage).compute_discount 
+    @discounted_price = @product.price - ProductCalculatorService.new(@product.price, @product.discount_percentage).compute_discount
   end
 
   def new
@@ -28,7 +28,7 @@ class ProductsController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
+
   def edit
   end
 
@@ -52,5 +52,4 @@ class ProductsController < ApplicationController
     def product_params
       params.expect(product: [ :name, :description ])
     end
-
 end
